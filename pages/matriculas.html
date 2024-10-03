@@ -17,10 +17,49 @@
         </a>
     </header>
     <main>
+        <article>
+            <form action="" class="form-control">
+                <div class="mb-3">
+                    <label for="listaAlunos"> Alunos Cadastrados</label>
+                    <select name="listaAlunos" id="listaAlunos" class="form-select">
+                        <!--Será alimentado pelo back-end-->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="listaTurmas"> Turmas Cadastrados</label>
+                    <select name="listaTurmas" id="listaTurmas" class="form-select">
+                        <!--Será alimentado pelo back-end-->    
+                    </select>
+                </div>
+                <div class="mb-3 container-btn">
+                    <button type="button" class="btn" onclick="matricular()">Matricular</button>
+                </div>
+            </form>
+        </article>
+
+        <article>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Aluno</th>
+                        <th>Turma</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="table-matriculas">
+                    <!-- Linhas alimentadas pelo back-end -->
+                </tbody>
+            </table>
+        </article>
         
     </main>
     <footer>
         <p>&copy; 2024 SAEP. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        listarDados()
+        criarTabela()
+    </script>
 </body>
 </html>
