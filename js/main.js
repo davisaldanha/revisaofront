@@ -111,7 +111,7 @@ function criarTabela(){
                     <td>${matricula.id}</td>
                     <td>${matricula.aluno}</td>
                     <td>${matricula.turma}</td>
-                    <td><button class="btn" onclick="">Desmatricular</button></td>
+                    <td><button class="btn" onclick="desmatricular(${matricula.id})">Desmatricular</button></td>
                     </tr>
                 `
             }
@@ -119,4 +119,15 @@ function criarTabela(){
             table.innerHTML = html
         }
     )
+}
+
+function desmatricular(idaluno){
+
+    axios.put(`${url}/offmatricula`, {aluno_id: idaluno})
+    .then(
+        (response) => {
+            alert(response.data.message)
+            window.location.reload()
+        }
+    ).catch(err => console.log(err))
 }
